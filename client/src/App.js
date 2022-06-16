@@ -3,6 +3,7 @@ import './App.css';
 import Total from './Component/Total';
 import Home from './Component/Home/Home';
 import Countries from './Component/Countries/Countries';
+import PiechartMain from './Component/PiechartMain/PiechartMain';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       {/* <Total/> */}
 
       <Home/>
-      <Countries/>
+      {/* <Countries/> */}
+      <PiechartMain/>
     </div>
   );
 }

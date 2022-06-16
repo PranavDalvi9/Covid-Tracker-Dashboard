@@ -39,7 +39,7 @@ console.log("dataaa", data)
                             <p>{e.Country}</p>
                             <p>Active : {(e.NewConfirmed) - e.NewDeaths - e.NewRecovered}</p>
                             <p>Recover : {e.TotalRecovered}</p>
-                            <p>Decrease : </p>
+                            <p>deceased  :{e.TotalDeaths} </p>
                         </div>
                     ))
                 }
