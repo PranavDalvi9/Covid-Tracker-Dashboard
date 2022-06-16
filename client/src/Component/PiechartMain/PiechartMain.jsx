@@ -1,8 +1,12 @@
 import React from 'react'
 import "./PiechartMain.css"
+import { useEffect } from 'react'
+import { useState } from 'react'
+import axios from "axios"
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -27,7 +31,15 @@ export const data = {
     ],
   };
 
+
+
+
 export default function PiechartMain() {
+    const [data1, setData1] = useState([])
+    useEffect(() => {
+      axios.get("http://localhost:2348/cod/Global").then((res) => setData1(res.data)).catch((err) => console.log(err))
+    }, [])
+console.log("data default" , data1)
   return (
     <div className='PieCircleDiv'>
       <Pie data={data} />

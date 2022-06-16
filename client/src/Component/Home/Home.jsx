@@ -18,6 +18,8 @@ export default function Home() {
   useEffect(() => {
     axios.get("http://localhost:2348/cod/Global").then((res) => setData(res.data)).catch((err) => console.log(err))
   }, [])
+
+  
   // console.log(data)
   return (
     <div className='HomeMainDiv'>
