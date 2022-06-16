@@ -26,5 +26,18 @@ router.get("/Global", async (req, res) => {
       });
   });
 
+  router.get("/individual/:id", async (req, res) => {
+    // console.log(req.params.id)
+    const data = await axios
+      .get(`https://api.covid19api.com/live/country/${req.params.id}`)
+      .then((ress) => {
+        return res.send(ress.data);
+      })
+      .catch((err) => {
+        return res.send(err);
+      });
+  });
+
 
 module.exports = router;
+
