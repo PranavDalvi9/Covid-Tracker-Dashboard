@@ -17,9 +17,9 @@ function App() {
       {/* <Countries/> */}
       {/* <PiechartMain/> */}
 
-      <SignIn/>
+      {/* <SignIn/> */}
 
-      {/* <SignUp/> */}
+      <SignUp/>
     </div>
   );
 }

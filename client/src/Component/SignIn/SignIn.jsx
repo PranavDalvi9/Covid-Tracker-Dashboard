@@ -1,4 +1,8 @@
 import * as React from 'react';
+import { useEffect } from 'react'
+import { useState } from 'react'
+import axios from "axios"
+
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -29,14 +33,21 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
+    const logData = {
       email: data.get('email'),
       password: data.get('password'),
-    });
+    };
+    console.log("login" , logData)
+    axios.post("http://localhost:2348/login",logData).then((res) => console.log(res.data)).catch((err)=> console.log(err))
   };
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -66,6 +77,7 @@ export default function SignIn() {
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={(e)=> setEmail(e.target.value)}
             />
             <TextField
               margin="normal"
@@ -76,6 +88,7 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={(e)=> setPassword(e.target.value)}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}

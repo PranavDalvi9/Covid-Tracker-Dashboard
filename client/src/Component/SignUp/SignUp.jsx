@@ -1,4 +1,5 @@
 import * as React from 'react';
+import axios from "axios"
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -32,10 +33,15 @@ export default function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
+    const dataAppend = {
       email: data.get('email'),
       password: data.get('password'),
-    });
+      firstname :  data.get('firstName'),
+      lastName :  data.get('lastName'),
+    };
+
+    axios.post("http://localhost:2348/register",dataAppend).then((res) => console.log(res.data)).catch((err)=> console.log(err))
+
   };
 
   return (
