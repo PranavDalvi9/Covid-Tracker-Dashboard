@@ -4,6 +4,7 @@ const cors = require("cors");
 
 
 const connect = require("./configs/db")
+const { register, login, newToken } = require("./controllers/auth.controller");
 
 const app = express();
 app.use(express.json());
@@ -16,6 +17,11 @@ app.use(cors());
 
 
 app.use("/cod" , covid)
+
+// register
+app.post("/register", register);
+// .login
+app.post("/login", login);
 
 app.listen(port, async (req, res) => {
   try {
