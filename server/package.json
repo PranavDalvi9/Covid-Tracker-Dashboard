@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
     "express": "^4.18.1",
-    "mongoose": "^6.3.8"
+    "mongoose": "^6.3.8",
+    "node-fetch": "^3.2.6"
   }
 }
