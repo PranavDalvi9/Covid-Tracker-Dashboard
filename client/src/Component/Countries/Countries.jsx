@@ -30,7 +30,7 @@ console.log("dataaa", data)
 
     return (
         <div>
-            <p>Countries</p>
+            {/* <p>Countries</p> */}
             <input type="text" value={countryName} placeholder="Search By Country" onChange={(e) => setCountryName(e.target.value)} /> <br /><br />
 
             <div className='CountriesDiv'>

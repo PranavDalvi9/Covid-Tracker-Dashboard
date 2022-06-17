@@ -43,7 +43,7 @@ function App() {
 
         <Route path="/sign-in" element={<SignIn />} />
 
-        <Route path="/individual" element={<IndividualCountries />} />
+        <Route path="/contries" element={<Countries />} />
 
         <Route path="/cont" element={<Countries />} />
       </Routes>
