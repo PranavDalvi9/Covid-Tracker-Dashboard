@@ -16,6 +16,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom';
 
 function Copyright(props) {
   return (
@@ -33,9 +34,8 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
+  const navigate = useNavigate()
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -44,8 +44,8 @@ export default function SignIn() {
       email: data.get('email'),
       password: data.get('password'),
     };
-    console.log("login" , logData)
-    axios.post("http://localhost:2348/login",logData).then((res) => console.log(res.data)).catch((err)=> console.log(err))
+    console.log("login", logData)
+    axios.post("http://localhost:2348/login", logData).then((res) => console.log(res.data)).catch((err) => console.log(err))
   };
 
 
@@ -77,7 +77,6 @@ export default function SignIn() {
               name="email"
               autoComplete="email"
               autoFocus
-              onChange={(e)=> setEmail(e.target.value)}
             />
             <TextField
               margin="normal"
@@ -88,7 +87,6 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
-              onChange={(e)=> setPassword(e.target.value)}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -109,7 +107,7 @@ export default function SignIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="#" variant="body2" onClick={() => navigate("/sign-up")}>
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
