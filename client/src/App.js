@@ -9,6 +9,7 @@ import SignUp from "./Component/SignUp/SignUp";
 import Navbar from "./Component/Navbar/Navbar";
 
 import { Route, Routes } from "react-router-dom";
+import IndividualCountries from "./Component/IndividualCountries/IndividualCountries";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       {/* <Total/> */}
 
       <Navbar />
+      {/* <IndividualCountries/> */}
 
       {/* <Home/> */}
       {/* <Countries/> */}
@@ -41,7 +43,7 @@ function App() {
 
         <Route path="/sign-in" element={<SignIn />} />
 
-        {/* <Route path="/sign-in" element={<SignIn />} /> */}
+        <Route path="/individual" element={<IndividualCountries />} />
       </Routes>
     </div>
   );
