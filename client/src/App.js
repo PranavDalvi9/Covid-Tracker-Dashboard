@@ -44,6 +44,8 @@ function App() {
         <Route path="/sign-in" element={<SignIn />} />
 
         <Route path="/individual" element={<IndividualCountries />} />
+
+        <Route path="/cont" element={<Countries />} />
       </Routes>
     </div>
   );

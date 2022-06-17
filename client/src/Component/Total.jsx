@@ -21,6 +21,7 @@ console.log("data" , data)
 
   return (
     <div>
+      <input type="text" />
       <h1>Total</h1>
     </div>
   )

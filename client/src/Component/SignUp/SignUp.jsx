@@ -14,6 +14,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
+import { loginLoading , loginSucces , loginFail } from '../../Redux/Login/Action';
+import { useDispatch } from 'react-redux';
+
 
 function Copyright(props) {
   return (
@@ -31,7 +34,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
-
+  const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const handleSubmit = (event) => {
@@ -43,8 +46,10 @@ export default function SignUp() {
       firstname :  data.get('firstName'),
       lastName :  data.get('lastName'),
     };
-
-    axios.post("http://localhost:2348/register",dataAppend).then((res) => console.log(res.data)).catch((err)=> console.log(err))
+    dispatch(loginLoading())
+    axios.post("http://localhost:2348/register",dataAppend)
+    .then((res) => {console.log(res.data) ; dispatch(loginSucces(res.data)) ; navigate("/")})
+    .catch((err)=> {console.log(err) ; dispatch(loginFail())})
 
   };
 

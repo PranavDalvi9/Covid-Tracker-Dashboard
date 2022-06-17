@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import axios from "axios"
+
 import "./Countries.css"
 
 export default function Countries() {
@@ -30,7 +31,7 @@ console.log("dataaa", data)
     return (
         <div>
             <p>Countries</p>
-            <input type="text" value={countryName} onChange={(e) => setCountryName(e.target.value)} />
+            <input type="text" value={countryName} placeholder="Search By Country" onChange={(e) => setCountryName(e.target.value)} /> <br /><br />
 
             <div className='CountriesDiv'>
                 {
