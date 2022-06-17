@@ -47,7 +47,7 @@ export default function SignUp() {
       lastName :  data.get('lastName'),
     };
     dispatch(loginLoading())
-    axios.post("http://localhost:2348/register",dataAppend)
+    axios.post("https://covid-19-tracker-champ.herokuapp.com/register",dataAppend)
     .then((res) => {console.log(res.data) ; dispatch(loginSucces(res.data)) ; navigate("/")})
     .catch((err)=> {console.log(err) ; dispatch(loginFail())})
 

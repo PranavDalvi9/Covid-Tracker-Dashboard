@@ -37,7 +37,7 @@ export const data = {
 export default function PiechartMain() {
     const [data1, setData1] = useState([])
     useEffect(() => {
-      axios.get("http://localhost:2348/cod/Global").then((res) => setData1(res.data)).catch((err) => console.log(err))
+      axios.get("https://covid-19-tracker-champ.herokuapp.com/cod/Global").then((res) => setData1(res.data)).catch((err) => console.log(err))
     }, [])
 console.log("data default" , data1)
   return (

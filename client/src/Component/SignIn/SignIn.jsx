@@ -48,7 +48,7 @@ export default function SignIn() {
     };
     console.log("login", logData)
     dispatch(loginLoading())
-    axios.post("http://localhost:2348/login", logData)
+    axios.post("https://covid-19-tracker-champ.herokuapp.com/login", logData)
     .then((res) => {console.log(res.data); dispatch(loginSucces(res.data)) ; navigate('/') })
     .catch((err) => {console.log(err) ; dispatch(loginFail())})
   };

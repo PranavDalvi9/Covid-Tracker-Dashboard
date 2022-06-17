@@ -16,7 +16,7 @@ console.log("data" , data)
     // },[])
 
     useEffect(() => {
-        axios.get("http://localhost:2348/cod/Global").then((res) => setData(res.data)).catch((err) => console.log(err))
+        axios.get("https://covid-19-tracker-champ.herokuapp.com/cod/Global").then((res) => setData(res.data)).catch((err) => console.log(err))
     },[])
 
   return (

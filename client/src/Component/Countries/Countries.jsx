@@ -11,7 +11,7 @@ export default function Countries() {
     const[countryName , setCountryName] = useState("")
 
     useEffect(() => {
-        axios.get("http://localhost:2348/cod/Countries").then((res) => {setData(res.data);setDataCopy(res.data) }).catch((err) => console.log(err))
+        axios.get("https://covid-19-tracker-champ.herokuapp.com/cod/Countries").then((res) => {setData(res.data);setDataCopy(res.data) }).catch((err) => console.log(err))
     }, [])
 
     // console.log("countries", data)
