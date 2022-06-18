@@ -1,9 +1,7 @@
-
 const express = require("express");
 const cors = require("cors");
 
-
-const connect = require("./configs/db")
+const connect = require("./configs/db");
 const { register, login, newToken } = require("./controllers/auth.controller");
 
 const app = express();
@@ -11,12 +9,11 @@ app.use(express.json());
 
 let port = process.env.PORT || 2348;
 
-const covid = require("./controllers/CovidController")
+const covid = require("./controllers/CovidController");
 
 app.use(cors());
 
-
-app.use("/cod" , covid)
+app.use("/cod", covid);
 
 // register
 app.post("/register", register);
