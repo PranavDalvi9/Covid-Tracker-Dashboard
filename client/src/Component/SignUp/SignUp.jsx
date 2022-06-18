@@ -14,7 +14,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
-import { loginLoading , loginSucces , loginFail } from '../../Redux/Login/Action';
+import { loginLoading, loginSucces, loginFail } from '../../Redux/Login/Action';
 import { useDispatch } from 'react-redux';
 
 
@@ -43,13 +43,13 @@ export default function SignUp() {
     const dataAppend = {
       email: data.get('email'),
       password: data.get('password'),
-      firstname :  data.get('firstName'),
-      lastName :  data.get('lastName'),
+      firstname: data.get('firstName'),
+      lastName: data.get('lastName'),
     };
     dispatch(loginLoading())
-    axios.post("https://covid-19-tracker-champ.herokuapp.com/register",dataAppend)
-    .then((res) => {console.log(res.data) ; dispatch(loginSucces(res.data)) ; navigate("/")})
-    .catch((err)=> {console.log(err) ; dispatch(loginFail())})
+    axios.post("https://covid-19-tracker-champ.herokuapp.com/register", dataAppend)
+      .then((res) => { console.log(res.data); dispatch(loginSucces(res.data)); navigate("/") })
+      .catch((err) => { console.log(err); dispatch(loginFail()) })
 
   };
 
