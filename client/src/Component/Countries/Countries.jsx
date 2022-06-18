@@ -2,12 +2,9 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import axios from "axios"
-
 import "./Countries.css"
-
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
@@ -19,9 +16,6 @@ export default function Countries() {
     useEffect(() => {
         axios.get("https://covid-19-tracker-champ.herokuapp.com/cod/Countries").then((res) => { setData(res.data); setDataCopy(res.data) }).catch((err) => console.log(err))
     }, [])
-
-    // console.log("countries", data)
-    // console.log("name" , countryName)
 
     useEffect(() => {
         countrySearch()
@@ -35,45 +29,9 @@ export default function Countries() {
     // console.log("dataaa", data)
 
     return (
-        <div>
+        <div className='CountriesMainDiv'>
             {/* <p>Countries</p> */}
-            <input type="text" value={countryName} placeholder="Search By Country" onChange={(e) => setCountryName(e.target.value)} /> <br /><br />
-
-            {/* <div className='CountriesDiv'>
-                {
-                    data.map((e) => (
-                        <div className='IndivCountriesDiv' key={e.Country}>
-                            <p>{e.Country}</p>
-                            <p>Active : {(e.NewConfirmed) - e.NewDeaths - e.NewRecovered}</p>
-                            <p>Recover : {e.TotalRecovered}</p>
-                            <p>deceased  :{e.TotalDeaths} </p>
-                        </div>
-                    ))
-                }
-            </div>
-
-            <div className=''>
-                <Card sx={{ maxWidth: 290 }}>
-                    <CardActionArea>
-                        <CardContent>
-                            <Typography variant="body2" color="text.secondary">
-                                Active
-                            </Typography>
-                            <Typography gutterBottom variant="h5" component="div">
-                                {(data.NewConfirmed) - data.NewDeaths - data.NewRecovered}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                This impressiv
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                Number of active cases from COVID-19.
-                            </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-            </div> */}
-
-
+            <input className='CountryInput' type="text" value={countryName} placeholder="Search By Country" onChange={(e) => setCountryName(e.target.value)} /> <br /><br />
 
             <div className='CountriesDiv'>
                 {
@@ -83,7 +41,7 @@ export default function Countries() {
                                 <CardActionArea>
                                     <CardContent>
                                         <Typography gutterBottom variant="h5" component="div">
-                                        {e.Country}
+                                            {e.Country}
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
                                             Active : {(e.NewConfirmed) - e.NewDeaths - e.NewRecovered}

@@ -1,4 +1,9 @@
 .NavBarDiv{
     display: flex;
     justify-content: space-around;
+    /* border: 2px solid red; */
+    background-color: #F47C7C;
+    padding: 10px;
+    font-weight: bolder;
+    color: #FFF2F2;
 }

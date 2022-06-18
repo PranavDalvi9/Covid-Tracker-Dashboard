@@ -1,19 +1,33 @@
-.CountriesDiv{
-    width: 80%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: auto;
-    gap: 20px;
+.CountriesMainDiv {
+  /* border: 2px solid violet; */
+  padding-top: 2%;
 }
 
-.IndivCountriesDiv{
-    padding-top: 5%;
-    /* border: 1px solid red; */
+.CountriesDiv {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+  /* border: 2px solid blue; */
 }
 
-.ContIndividualDiv{
-    /* border: 2px solid red; */
-   border-bottom: 2px solid red;
-   border-right: 2px solid red;
+.CountryInput {
+  background: #fad4d4;
+  color: #f47c7c;
+  border: none;
+  padding: 16px;
+  width: 30%;
+}
+
+.IndivCountriesDiv {
+  padding-top: 5%;
+  /* border: 1px solid red; */
+}
+
+.ContIndividualDiv {
+  /* border: 2px solid red; */
+  border-bottom: 4px solid rgb(230, 108, 108);
+  /* border-right: 2px solid red; */
 }
