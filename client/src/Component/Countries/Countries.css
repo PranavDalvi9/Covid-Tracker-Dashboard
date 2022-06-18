@@ -4,10 +4,16 @@
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: auto;
-    gap: 15px;
+    gap: 20px;
 }
 
 .IndivCountriesDiv{
     padding-top: 5%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+}
+
+.ContIndividualDiv{
+    /* border: 2px solid red; */
+   border-bottom: 2px solid red;
+   border-right: 2px solid red;
 }

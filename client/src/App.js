@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Total from "./Component/Total";
 import Home from "./Component/Home/Home";
@@ -9,7 +8,6 @@ import SignUp from "./Component/SignUp/SignUp";
 import Navbar from "./Component/Navbar/Navbar";
 
 import { Route, Routes } from "react-router-dom";
-import IndividualCountries from "./Component/IndividualCountries/IndividualCountries";
 
 function App() {
   return (
